@@ -1,6 +1,5 @@
 <body>
   <?php
-    include __DIR__."/dist/php/server.php";
+    include $_SERVER['DOCUMENT_ROOT']."/mamp_public/php-hotel-crud/dist/php/server.php";
   ?>
-
 </body>
