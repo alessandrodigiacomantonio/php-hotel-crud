@@ -4,11 +4,12 @@
     if ($conn && $conn->connect_error) {
       echo "Connection failed: " . $conn->connect_error;
     }
-    $sql = "SELECT * FROM stanze";
+    $sql = "SELECT id, room_number, floor FROM stanze";
     $result = $conn->query($sql);
     if ($result && $result->num_rows > 0) {
+      $rooms = [];
     while($row = $result->fetch_assoc()) {
-    echo "Stanza N. ". $row['room_number']. " piano: ".$row['floor']."\n";
+      $rooms[] = $row;
     }
     } elseif ($result) {
     echo "0 results";
