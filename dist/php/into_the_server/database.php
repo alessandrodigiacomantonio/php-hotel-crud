@@ -11,6 +11,7 @@
       $rooms = [];
       while($row = $result->fetch_assoc()) {
         $rooms[] = $row;
+        // echo $row[id];
       }
     } elseif ($result) {
     echo "0 results";
