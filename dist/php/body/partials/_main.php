@@ -22,7 +22,7 @@
         <?php
           $room_id = 0;
           foreach($room as $k => $data) {
-            if ($room_id == 0) $room_id = $data;
+            if ($room_id == 0 && $k == 'Codice Stanza') $room_id = $data;
         ?>
         <td>
           <?php echo $data; ?>
