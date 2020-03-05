@@ -2,6 +2,6 @@
   $servername = "localhost";
   $username = "root";
   $password = "root";
-  $dbname = "hotel";
+  $dbname = "db_hotel";
 
   $basePath = $_SERVER['DOCUMENT_ROOT']."/mamp_public/php-hotel-crud";
