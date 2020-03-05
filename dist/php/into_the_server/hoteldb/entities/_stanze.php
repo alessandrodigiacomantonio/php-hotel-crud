@@ -1,5 +1,5 @@
 <?php
-  include $_SERVER['DOCUMENT_ROOT']."/mamp_public/php-hotel-crud/dist/php/into_the_server/env.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/mamp_public/php-hotel-crud/dist/php/into_the_server/env.php";
   $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn && $conn->connect_error) {
       echo "Connection failed: " . $conn->connect_error;
@@ -11,7 +11,6 @@
       $rooms = [];
       while($row = $result->fetch_assoc()) {
         $rooms[] = $row;
-        // echo $row[id];
       }
     } elseif ($result) {
     echo "0 results";
