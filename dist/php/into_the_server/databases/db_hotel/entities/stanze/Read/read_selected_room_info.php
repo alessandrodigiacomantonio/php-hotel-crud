@@ -6,7 +6,7 @@
       die();
     }
     $room_id = $_GET['id'];
-    $sql = "SELECT stanze.id 'Codice Stanza', stanze.room_number 'Numero Stanza', stanze.floor 'Piano', title 'Configurazione letti' FROM stanze INNER JOIN prenotazioni ON prenotazioni.stanza_id = stanze.id INNER JOIN configurazioni ON configurazioni.id = prenotazioni.configurazione_id WHERE stanze.id = $room_id";
+    $sql = "SELECT stanze.id 'Codice Stanza', stanze.room_number 'Numero Stanza', stanze.floor 'Piano', title 'Configurazione letti' FROM stanze INNER JOIN prenotazioni ON prenotazioni.stanza_id = stanze.id INNER JOIN configurazioni ON configurazioni.id = prenotazioni.configurazione_id WHERE stanze.id = $room_id GROUP BY stanze.id, stanze.room_number, stanze.floor, configurazioni.title";
     $result = $conn->query($sql);
     if ($result && $result->num_rows > 0) {
       $rooms = [];
