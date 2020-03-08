@@ -2,7 +2,7 @@
   include_once $_SERVER['DOCUMENT_ROOT']."/mamp_public/php-hotel-crud/dist/php/into_the_server/env.php";
   $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn && $conn->connect_error) {
-      echo "Connection failed: " . $conn->connect_error;
+      echo "Connessione non riuscita: " . $conn->connect_error;
       die();
     }
     $room_id = $_POST['id'];
@@ -16,8 +16,8 @@
       } else {
       echo "query error";
       }
-    $conn->close();
     }
+  $conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +28,7 @@
   <body>
     <?php include $_SERVER['DOCUMENT_ROOT']."/mamp_public/php-hotel-crud/dist/php/body/partials/_header.php"; ?>
     <div class="container">
-      <div class="row">
+      <div class="row m-5">
         <form action="call_to_server.php" method="POST">
           <input type="hidden" name="id" value="<?php echo $room_id; ?>">
           <div class="form-group">

@@ -2,7 +2,7 @@
   include_once $_SERVER['DOCUMENT_ROOT']."/mamp_public/php-hotel-crud/dist/php/into_the_server/env.php";
   $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn && $conn->connect_error) {
-      echo "Connection failed: " . $conn->connect_error;
+      echo "Connessione non riuscita: " . $conn->connect_error;
       die();
     }
     $room_id = $_POST['id'];
@@ -29,16 +29,6 @@
       echo $error_modify_room_beds;
       die();
     }
-    // $now = getdate(time()+3600);
-    // $curr_year = $now['year'];
-    // $curr_month = $now['mon'];
-    // $curr_day = $now['wday'];
-    // $curr_hours = $now['hours'];
-    // $curr_minutes = $now['minutes'];
-    // $curr_seconds = $now['seconds'];
-    // $curr_date = $curr_year.'-'.$curr_month.'-'.$curr_day.' '. $curr_hours.':'.$curr_minutes.':'.$curr_seconds;
-    // $date = date_create($curr_date);
-    // $date = date_format($date, 'Y-m-d H:i:s');
     $sql = "UPDATE stanze SET stanze.room_number = $room_number, stanze.floor = $room_floor, stanze.beds = $room_beds, stanze.updated_at = CURRENT_TIMESTAMP WHERE stanze.id = $room_id";
     $result = $conn->query($sql);
     if ($result) {

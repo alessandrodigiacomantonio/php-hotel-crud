@@ -5,7 +5,7 @@
       echo "Connection failed: " . $conn->connect_error;
       die();
     }
-    $sql = "SELECT id 'Codice Stanza', room_number 'Numero Stanza', floor 'Piano' FROM stanze";
+    $sql = "SELECT id 'Codice Stanza', room_number 'Numero Stanza', floor 'Piano' FROM stanze ORDER BY room_number, floor, id";
     $result = $conn->query($sql);
     if ($result && $result->num_rows > 0) {
       $rooms = [];

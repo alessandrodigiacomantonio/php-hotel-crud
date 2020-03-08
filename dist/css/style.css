@@ -7,3 +7,23 @@ body {
   text-align: center;
 }
 
+::-webkit-input-placeholder {
+  font-size: 0.8rem;
+}
+
+::-moz-placeholder {
+  font-size: 0.8rem;
+}
+
+:-ms-input-placeholder {
+  font-size: 0.8rem;
+}
+
+::-ms-input-placeholder {
+  font-size: 0.8rem;
+}
+
+::placeholder {
+  font-size: 0.8rem;
+}
+
